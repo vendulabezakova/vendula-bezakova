@@ -1,1 +1,0 @@
-# vendula-bezakova
