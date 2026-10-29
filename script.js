@@ -1,44 +1,39 @@
-// Certificates – add new ones here, in the order they should appear.
-// image: certificate screenshot in images/certificates/ (optional), url: link to the certificate (optional)
+// Certificates – add new ones here, newest first (they are shown in this order).
+// image: certificate screenshot in images/certificates/ (opens in the lightbox; optional)
+// url: online verification link, shown as a "Verify" button (optional)
 const CERTIFICATES = [
   {
     title: 'UX in Practice: Design an App Through Users\' Eyes',
     issuer: 'Czechitas',
     year: 2026,
     image: 'images/certificates/ux-v-praxi.jpeg',
-    url: 'images/certificates/ux-v-praxi.jpeg',
-  },
-  {
-    title: 'Python for Web: Django 1',
-    issuer: 'Czechitas',
-    year: 2022,
-    image: 'images/certificates/django.jpeg',
-    url: 'images/certificates/django.jpeg',
-  },
-  {
-    title: 'Python',
-    issuer: 'Czechitas',
-    year: 2021,
-    image: 'images/certificates/python.jpeg',
-    url: 'images/certificates/python.jpeg',
+    url: 'https://certifikat.czechitas.cz/credentials/f1ae696f-e23f-48b9-b023-c81bf62c9b69',
   },
   {
     title: 'JavaScript 2',
     issuer: 'Czechitas',
     year: 2024,
     image: 'images/certificates/javascript-2.jpeg',
-    url: 'images/certificates/javascript-2.jpeg',
+  },
+  {
+    title: 'Python for Web: Django 1',
+    issuer: 'Czechitas',
+    year: 2022,
+    image: 'images/certificates/django.jpeg',
+  },
+  {
+    title: 'Python',
+    issuer: 'Czechitas',
+    year: 2021,
+    image: 'images/certificates/python.jpeg',
   },
   {
     title: 'Building a Website from A to Z – 2',
     issuer: 'Czechitas',
     year: 2019,
     image: 'images/certificates/web-a-z-2.jpeg',
-    url: 'images/certificates/web-a-z-2.jpeg',
   },
 ];
-
-const isImage = (url) => /\.(jpe?g|png|webp|gif|avif)$/i.test(url);
 
 function renderCertificates() {
   const list = document.getElementById('certificates-list');
@@ -55,11 +50,9 @@ function renderCertificates() {
         <h3>${cert.title}</h3>
         <p class="cert-meta">${cert.issuer} · ${cert.year}</p>
         ${cert.url ? `<div class="card-links">
-          ${isImage(cert.url) && cert.image
-            ? `<a href="${cert.url}" data-lightbox="${i}">View certificate</a>`
-            : `<a href="${cert.url}" target="_blank" rel="noopener">
-                View certificate <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg>
-              </a>`}
+          <a class="btn btn-small btn-ghost" href="${cert.url}" target="_blank" rel="noopener">
+            Verify <svg class="icon" aria-hidden="true"><use href="#i-external"/></svg>
+          </a>
         </div>` : ''}
       </div>
     </article>
@@ -150,7 +143,7 @@ function initActiveNav() {
   update();
 }
 
-// Contact form: sends to data-endpoint (e.g. Formspree) if set, otherwise opens the e-mail client
+// Contact form: sends via Web3Forms (data-endpoint) without leaving the page; if data-endpoint is empty, opens the e-mail client
 function initContactForm() {
   const form = document.getElementById('contact-form');
   const status = document.getElementById('form-status');

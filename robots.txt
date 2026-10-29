@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://vendulabezakova.github.io/vendula-bezakova/sitemap.xml
