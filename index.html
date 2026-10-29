@@ -269,8 +269,13 @@
           </ul>
         </div>
 
-        <!-- Set data-endpoint (e.g. a Formspree URL) to send messages directly; when empty, the form opens the visitor's e-mail client -->
-        <form class="contact-form" id="contact-form" action="mailto:vendula.bezakova@gmail.com" method="post" enctype="text/plain" data-endpoint="">
+        <!-- Messages are sent via Web3Forms (web3forms.com) to vendula.bezakova@gmail.com; the access key is public by design -->
+        <form class="contact-form" id="contact-form" action="https://api.web3forms.com/submit" method="post" data-endpoint="https://api.web3forms.com/submit">
+          <input type="hidden" name="access_key" value="6b9fdf33-0884-419b-bf13-23b371e6a202">
+          <input type="hidden" name="subject" value="New message from vendulabezakova.github.io">
+          <input type="hidden" name="from_name" value="Vendula Bezáková – website">
+          <!-- Honeypot: bots tick it, people never see it -->
+          <input type="checkbox" name="botcheck" class="visually-hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="field">
             <label for="cf-name">Name</label>
             <input id="cf-name" name="name" type="text" autocomplete="name" required>

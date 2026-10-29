@@ -72,6 +72,8 @@ h3 { font-size: 1.15rem; }
 
 .muted { color: var(--c-muted); }
 
+.visually-hidden { display: none !important; }
+
 .skip-link {
   position: absolute;
   left: -9999px;

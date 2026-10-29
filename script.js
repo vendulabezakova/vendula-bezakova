@@ -169,6 +169,10 @@ function initContactForm() {
       return;
     }
 
+    data.set('subject', `New message from ${data.get('name')} (vendulabezakova.github.io)`);
+    data.set('replyto', data.get('email'));
+    const button = form.querySelector('button[type="submit"]');
+    button.disabled = true;
     status.textContent = 'Sending…';
     try {
       const response = await fetch(endpoint, {
@@ -176,7 +180,8 @@ function initContactForm() {
         body: data,
         headers: { Accept: 'application/json' },
       });
-      if (!response.ok) throw new Error(response.statusText);
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok || result.success === false) throw new Error(result.message || response.statusText);
       form.reset();
       status.textContent = 'Thank you! Your message has been sent.';
       status.classList.add('success');
@@ -184,6 +189,7 @@ function initContactForm() {
       status.textContent = 'Something went wrong. Please e-mail me directly.';
       status.classList.add('error');
     }
+    button.disabled = false;
   });
 }
 
