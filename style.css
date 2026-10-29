@@ -424,7 +424,85 @@ h3 { font-size: 1.15rem; }
 }
 .card-links a:hover { text-decoration: underline; }
 
+.card-img-placeholder {
+  display: grid;
+  place-items: center;
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  color: var(--c-olive);
+}
+
+.certificates .card-img { object-position: center; }
+
 .cert-meta { font-size: 0.9rem; }
+
+.card-img-link { display: block; overflow: hidden; cursor: zoom-in; }
+.card-img-link .card-img { transition: transform 0.3s; }
+.card-img-link:hover .card-img { transform: scale(1.03); }
+
+/* ---------- Lightbox ---------- */
+.lightbox {
+  width: 100%;
+  max-width: none;
+  height: 100%;
+  max-height: none;
+  margin: 0;
+  padding: 56px 72px 24px;
+  border: 0;
+  background: transparent;
+  overscroll-behavior: contain;
+}
+.lightbox[open] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lightbox::backdrop { background: rgba(30, 32, 24, 0.88); }
+
+.lightbox figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  max-height: 100%;
+}
+.lightbox-img {
+  max-width: 100%;
+  max-height: calc(100vh - 140px);
+  max-height: calc(100dvh - 140px);
+  object-fit: contain;
+  border-radius: 6px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+.lightbox-caption { color: #f1eee4; text-align: center; font-size: 0.95rem; }
+
+.lightbox-btn {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.lightbox-btn:hover { background: rgba(255, 255, 255, 0.25); }
+.lightbox-btn .icon { width: 24px; height: 24px; }
+.lightbox-close { top: 12px; right: 12px; }
+.lightbox-prev { left: 14px; top: 50%; transform: translateY(-50%); }
+.lightbox-next { right: 14px; top: 50%; transform: translateY(-50%); }
+.lightbox-btn[hidden] { display: none; }
+
+@media (max-width: 600px) {
+  .lightbox { padding: 64px 12px 80px; }
+  .lightbox-prev, .lightbox-next { top: auto; bottom: 20px; transform: none; }
+  .lightbox-prev { left: calc(50% - 56px); }
+  .lightbox-next { right: calc(50% - 56px); }
+}
 
 /* ---------- Community ---------- */
 #community p { font-size: 1.1rem; }
