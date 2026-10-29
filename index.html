@@ -2,151 +2,285 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta property="og:image" content="images/vendula-loves-memes.jpg">
-  <link rel="stylesheet" href="style.css">
+  <title>Vendula Bezáková – Web Specialist</title>
+  <meta name="description" content="Vendula Bezáková – web specialist. I take care of websites, content, SEO and UX.">
+  <meta property="og:title" content="Vendula Bezáková – Web Specialist">
+  <meta property="og:description" content="I take care of websites, content, SEO and UX.">
+  <meta property="og:image" content="images/vendula-bezakova-profile-photo.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <title>Vendula Bezáková - resume</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat+Alternates:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <header>
-    <nav>
-      <label for="touch"><span>Menu</span></label>
-      <input type="checkbox" id="touch"> 
-        <ul class="dropdown">
-          <li>
-            <a href="#strenghts">strenghts</a>
-          </li>
-          <li>
-            <a href="#skills">skills</a>
-          </li>
-          <li>
-            <a href="#experiences">experiences</a>
-          </li>
-          <li>
-            <a href="#certificates">certificates</a>
-          </li>
-          <li>
-            <a href="#contact" class="button">contact</a>
-          </li>
+
+  <!-- SVG icon sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="i-mail" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M3 5h18v14H3z M3 6l9 7 9-7"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 .3a12 12 0 0 0-3.8 23.38c.6.12.83-.26.83-.57v-2.03c-3.34.73-4.04-1.6-4.04-1.6-.55-1.4-1.34-1.77-1.34-1.77-1.08-.74.09-.73.09-.73 1.2.09 1.83 1.24 1.83 1.24 1.07 1.83 2.8 1.3 3.49 1 .1-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.14-.3-.54-1.52.1-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.28-1.55 3.29-1.23 3.29-1.23.64 1.66.24 2.88.12 3.18.77.84 1.23 1.91 1.23 3.22 0 4.61-2.8 5.63-5.48 5.92.42.36.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12 12 0 0 0 12 .3"/></symbol>
+    <symbol id="i-external" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6 M20 4l-9 9 M18 14v6H4V6h6"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 7h16 M4 12h16 M4 17h16"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 6l12 12 M18 6L6 18"/></symbol>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="#about">Vendula Bezáková</a>
+
+      <!-- Hamburger works without JS thanks to the checkbox; JS only enhances it -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle menu">
+      <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
+        <svg class="icon icon-open"><use href="#i-menu"/></svg>
+        <svg class="icon icon-close"><use href="#i-close"/></svg>
+      </label>
+
+      <nav class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#strengths">Strengths</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#certificates">Certificates</a></li>
+          <li><a href="#contact" class="nav-cta">Contact</a></li>
         </ul>
-    </nav>
+      </nav>
+    </div>
   </header>
 
-  <section class="intro">
-    <div class="left">
-    <h1>I am Vendula, <br>
-      webmaster</h1>
-      <p>My goal is to keep our websites functional, intuitive, useful and easy to use.</p>
-    </div>
-    <div class="right">
-      <img src="images/vendula-bezakova-profile-photo.jpg">
-    </div>
-  </section>
+  <main id="main">
 
-  <section class="strenghts" id="strenghts">
-    <div class="left">
-    <h2>What are my strongest sides?
-    </h2>
-    <p>The StrengthsFinder assessment is a personal development tool developed by Gallup Education, which provides an individual with their “Top 5” strengths. 34 different strength themes are divided into four domains of Strategic Thinking, Relationship Building, Influencing and Executing. Which are mine?</p>
-    <p>I love exploring and to be curious. I think deeply and often. I share my visions of better future. I'm using my passion for learning to add value to my own and others' lives. My connections are deeply.</p>
-  </div>
-  <div class="right" style="text-align: center;">
-    <p class="tiles">Learner</p>
-    <p class="tiles">Futuristic</p>
-    <p class="tiles">Intellection</p>
-    <p class="tiles">Input</p>
-    <p class="tiles">Relator</p>
-  </div>
-  </section>
-
-
-  <section class="overview" id="skills">
-    <h2 style="text-align: center; color:white">Overview of my skills
-    </h2>
-    <div class="skills">
-      <ul>
-        <li>HTML/CSS</li>
-        <li>Bootstrap</li>
-        <li>Kentico CMS</li>
-        <li>Wordpress CMS</li>
-        <li>Django Basics</li>
-        <li>SEO</li>
-        <li>Visual Studio Code</li>
-        <li>Google Search Console</li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="experiences" id="experiences">
-    <!--<div class="vl"></div> #vertikalni linka-->
-      <h2 style="text-align: center;">Working experiences</h2>
-      <div class="left">
-        <p style="text-align:right"><b>11/2020 - now</b><br>
-        Webmaster in Purple Trading <br>brokerage</p>
-        <p>&nbsp;<br>
-          &nbsp;</p>
-        <p style="text-align:right"><b>2/2016 - 5/2018</b><br>
-          Online marketing specialist in Slam.CZ <br>web agency</p>
+    <!-- Hero -->
+    <section class="hero" id="about">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <p class="eyebrow">Hi, I'm</p>
+          <h1>Vendula Bezáková <span class="dash">–</span> <span class="role">Web Specialist</span></h1>
+          <p class="lead">I take care of websites from content to code. I keep them fast, findable and easy to use, with SEO, analytics and UX in mind.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Get in touch</a>
+            <a class="btn btn-ghost" href="#experience">See my experience</a>
+          </div>
+        </div>
+        <div class="hero-photo">
+          <img src="images/vendula-bezakova-profile-photo.jpg" alt="Portrait of Vendula Bezáková" width="420" height="420">
+        </div>
       </div>
+    </section>
 
-      <div class="right">
-        <p>&nbsp;<br>
-          &nbsp;</p>
-        <p><b>6/2018 - 3/2020</b><br>
-          Online marketing specialist in CleverFarm <br>startup</p>
+    <!-- Strengths -->
+    <section class="section section-alt" id="strengths">
+      <div class="container">
+        <h2>Strengths</h2>
+        <p class="section-intro">Gallup CliftonStrengths identifies a person's five most dominant talents out of 34 themes. Mine show that I'm curious, think deeply, look ahead and build lasting relationships.</p>
+        <ol class="strengths">
+          <li class="strength">
+            <span class="strength-num">1</span>
+            <h3>Learner</h3>
+            <p>I love learning new things, and the process excites me as much as the result.</p>
+          </li>
+          <li class="strength">
+            <span class="strength-num">2</span>
+            <h3>Futuristic</h3>
+            <p>I picture what could be better and inspire others with that vision.</p>
+          </li>
+          <li class="strength">
+            <span class="strength-num">3</span>
+            <h3>Intellection</h3>
+            <p>I enjoy thinking things through and digging into complex problems.</p>
+          </li>
+          <li class="strength">
+            <span class="strength-num">4</span>
+            <h3>Input</h3>
+            <p>I collect information, ideas and resources that may come in handy one day.</p>
+          </li>
+          <li class="strength">
+            <span class="strength-num">5</span>
+            <h3>Relator</h3>
+            <p>I build deep, trusting relationships with the people I work with.</p>
+          </li>
+        </ol>
       </div>
-  </section>
+    </section>
 
-  <section class="certificates" style="color: white;" id="certificates">
-    <div class="left">
-      <h2  style="color: white;">Certificates,<br>
-      & trainings</h2>
-    </div>
-    <div class="right">
-      <p>I love to learn. My natural ability is to pick up and absorb information quickly and to challenge myself to continually learn more.</p>
-    </div>
-    <div class="logos">
-      <div>
-        <a href="images/django.jpeg" target="_blank" ><img src="images/django-logo.png" title="Click for certificate"></a>
+    <!-- Skills -->
+    <section class="section" id="skills">
+      <div class="container">
+        <h2>Skills</h2>
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h3>Frontend</h3>
+            <ul class="tags"><li>HTML</li><li>CSS</li><li>Bootstrap</li></ul>
+          </div>
+          <div class="skill-group">
+            <h3>CMS</h3>
+            <ul class="tags"><li>WordPress</li><li>Strapi</li></ul>
+          </div>
+          <div class="skill-group">
+            <h3>Backend &amp; data</h3>
+            <ul class="tags"><li>Django</li><li>Supabase</li></ul>
+          </div>
+          <div class="skill-group">
+            <h3>SEO &amp; analytics</h3>
+            <ul class="tags"><li>SEO</li><li>Google Search Console</li><li>Google Analytics 4</li></ul>
+          </div>
+          <div class="skill-group">
+            <h3>UX</h3>
+            <ul class="tags"><li>UX design</li><li>A/B testing</li></ul>
+          </div>
+          <div class="skill-group">
+            <h3>Tools</h3>
+            <ul class="tags"><li>VS Code</li><li>Git &amp; GitHub</li><li>Claude Code <small>(AI-assisted development)</small></li></ul>
+          </div>
+        </div>
       </div>
-      <div>
-        <a href="images/htmlcss.jpeg" target="_blank" ><img src="images/html-css-logos.png" title="Click for certificate"></a>
+    </section>
+
+    <!-- Experience -->
+    <section class="section section-alt" id="experience">
+      <div class="container">
+        <h2>Experience</h2>
+        <ol class="timeline">
+          <li class="timeline-item">
+            <p class="timeline-date"><time datetime="2020-11">11/2020</time> – now</p>
+            <h3>Web Specialist</h3>
+            <p class="timeline-company">
+              <span class="brand">Purple Trading</span> <span class="muted">forex broker</span>
+              <span class="brand">Fintokei</span> <span class="muted">prop trading firm, since 2023</span>
+            </p>
+            <p>Managing websites and content, SEO, frontend, analytics, UX and project coordination.</p>
+          </li>
+          <li class="timeline-item">
+            <p class="timeline-date"><time datetime="2018-06">6/2018</time> – <time datetime="2020-03">3/2020</time></p>
+            <h3>Online Marketing Specialist</h3>
+            <p class="timeline-company"><span class="brand">CleverFarm</span> <span class="muted">startup</span></p>
+          </li>
+          <li class="timeline-item">
+            <p class="timeline-date"><time datetime="2016-02">2/2016</time> – <time datetime="2018-05">5/2018</time></p>
+            <h3>Online Marketing Specialist</h3>
+            <p class="timeline-company"><span class="brand">Slam.CZ</span> <span class="muted">web agency</span></p>
+          </li>
+        </ol>
       </div>
-      <div>
-        <a href="images/python.jpeg" target="_blank" ><img src="images/Python_logo.png" title="Click for certificate"></a>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects">
+      <div class="container">
+        <h2>Projects</h2>
+        <div class="cards projects">
+          <!-- To add a project, copy an <article> and change its contents -->
+          <article class="card project-card">
+            <img class="card-img" src="images/projects/oudeep.png" alt="Oudeep homepage" loading="lazy">
+            <div class="card-body">
+              <h3>Oudeep</h3>
+              <p>Website for a Gallup strengths coach. I did the redesign, built custom content with ACF and set up the language versions.</p>
+              <ul class="tags tags-small"><li>WordPress</li><li>ACF</li><li>Multilingual</li></ul>
+              <div class="card-links">
+                <a href="https://www.oudeep.com/" target="_blank" rel="noopener">
+                  <svg class="icon"><use href="#i-external"/></svg> Live site
+                </a>
+                <a href="https://github.com/vendulabezakova/oudeep" target="_blank" rel="noopener">
+                  <svg class="icon"><use href="#i-github"/></svg> Code on GitHub
+                </a>
+              </div>
+            </div>
+          </article>
+          <article class="card project-card">
+            <img class="card-img" src="images/projects/fintokei-program-finder.png" alt="Fintokei Program Finder quiz, first question" loading="lazy">
+            <div class="card-body">
+              <h3>Fintokei Program Finder</h3>
+              <p>A short quiz for the Fintokei website that helps new traders choose the right prop trading challenge. It was embedded on the site via a Bloomreach weblayer.</p>
+              <ul class="tags tags-small"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Bloomreach</li></ul>
+              <div class="card-links">
+                <a href="https://vendulabezakova.github.io/fintokei-program-finder/demo.html" target="_blank" rel="noopener">
+                  <svg class="icon"><use href="#i-external"/></svg> Demo
+                </a>
+                <a href="https://github.com/vendulabezakova/fintokei-program-finder" target="_blank" rel="noopener">
+                  <svg class="icon"><use href="#i-github"/></svg> Code on GitHub
+                </a>
+              </div>
+            </div>
+          </article>
+          <article class="card project-card">
+            <img class="card-img" src="images/projects/bivouachunter.png" alt="BivouacHunter map with filters for bivouac spots" loading="lazy">
+            <div class="card-body">
+              <h3>BivouacHunter</h3>
+              <p>An app for finding safe bivouac spots, with filters for water sources, shelter, terrain and more. Built as a project for the Czechitas UX course.</p>
+              <ul class="tags tags-small"><li>Django</li><li>Leaflet</li><li>UX</li></ul>
+              <div class="card-links">
+                <a href="https://github.com/vendulabezakova/bivouachunter" target="_blank" rel="noopener">
+                  <svg class="icon"><use href="#i-github"/></svg> Code on GitHub
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
-      <div>
-        <a href="images/ga.jpeg" target="_blank" ><img src="images/ga.png" title="Click for certificate"></a>
+    </section>
+
+    <!-- Certificates (rendered from the CERTIFICATES array in script.js) -->
+    <section class="section section-alt" id="certificates">
+      <div class="container">
+        <h2>Certificates</h2>
+        <p class="section-intro">I love learning, and these are some of the courses and trainings I have completed.</p>
+        <div class="cards certificates" id="certificates-list"></div>
+        <noscript><p>Turn on JavaScript to see the list of certificates.</p></noscript>
       </div>
+    </section>
+
+    <!-- Community -->
+    <section class="section" id="community">
+      <div class="container narrow">
+        <h2>Community</h2>
+        <p>I've been part of <a href="https://www.czechitas.cz/" target="_blank" rel="noopener">Czechitas</a> since 2015. I started as a student, later coached HTML &amp; CSS courses and graduated from the UX course.</p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section section-alt" id="contact">
+      <div class="container contact-inner">
+        <div class="contact-info">
+          <h2>Contact</h2>
+          <p>Have a project, a question or just want to say hi? Write me a message.</p>
+          <ul class="contact-links">
+            <li><a href="mailto:vendula.bezakova@gmail.com"><svg class="icon"><use href="#i-mail"/></svg> vendula.bezakova@gmail.com</a></li>
+            <li><a href="https://www.linkedin.com/in/vendula-bezakova/" target="_blank" rel="noopener"><svg class="icon"><use href="#i-linkedin"/></svg> LinkedIn</a></li>
+            <li><a href="https://github.com/vendulabezakova" target="_blank" rel="noopener"><svg class="icon"><use href="#i-github"/></svg> GitHub</a></li>
+          </ul>
+        </div>
+
+        <!-- Set data-endpoint (e.g. a Formspree URL) to send messages directly; when empty, the form opens the visitor's e-mail client -->
+        <form class="contact-form" id="contact-form" action="mailto:vendula.bezakova@gmail.com" method="post" enctype="text/plain" data-endpoint="">
+          <div class="field">
+            <label for="cf-name">Name</label>
+            <input id="cf-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="cf-email">E-mail</label>
+            <input id="cf-email" name="email" type="email" autocomplete="email" required>
+          </div>
+          <div class="field">
+            <label for="cf-message">Message</label>
+            <textarea id="cf-message" name="message" rows="5" required></textarea>
+          </div>
+          <button class="btn btn-primary" type="submit">Send message</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year">2026</span> Vendula Bezáková</p>
     </div>
-
-  </section>
-
-
-  <section class="intro" style="padding-bottom: 0" id="contact">
-    <div class="left">
-      <img src="images/vendula-loves-memes.jpg">
-    </div>
-    <div class="right" id="contact">
-      <h2>Feel free to contact me</h2>
-      <a href="mailto:vendula.bezakova@gmail.com"><i class="fa fa-envelope" style="color:#414833;padding-right: 15px;"></i>vendula.bezakova@gmail.com</a>
-      <a href="https://www.linkedin.com/in/vendula-bezakova/"><i class="fa fa-linkedin" style="color:#414833;padding-right: 15px"></i>Linkedin</a>
-      <a href="https://github.com/vendulabezakova"><i class="fa fa-github" style="color:#414833;padding-right: 15px"></i>Github</a>
-
-
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; Copyright 2022, Vendula Bezáková</p>
   </footer>
-
-
 
 </body>
 </html>
