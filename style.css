@@ -72,8 +72,6 @@ h3 { font-size: 1.15rem; }
 
 .muted { color: var(--c-muted); }
 
-.visually-hidden { display: none !important; }
-
 .skip-link {
   position: absolute;
   left: -9999px;
@@ -566,6 +564,7 @@ h3 { font-size: 1.15rem; }
   box-shadow: 0 0 0 3px rgba(101, 109, 74, 0.2);
 }
 .field textarea { resize: vertical; }
+.field .required { font-weight: 400; font-size: 0.85rem; color: var(--c-muted); }
 
 .form-status { margin: 12px 0 0; min-height: 1.5em; font-weight: 500; }
 .form-status.error { color: #a23b2a; }

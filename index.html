@@ -11,8 +11,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat+Alternates:wght@500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="style.css?v=2">
+  <script src="script.js?v=2" defer></script>
 </head>
 <body>
 
@@ -275,17 +275,17 @@
           <input type="hidden" name="subject" value="New message from vendulabezakova.github.io">
           <input type="hidden" name="from_name" value="Vendula Bezáková – website">
           <!-- Honeypot: bots tick it, people never see it -->
-          <input type="checkbox" name="botcheck" class="visually-hidden" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <input type="checkbox" name="botcheck" hidden style="display:none" tabindex="-1" autocomplete="off">
           <div class="field">
-            <label for="cf-name">Name</label>
+            <label for="cf-name">Name <span class="required">(required)</span></label>
             <input id="cf-name" name="name" type="text" autocomplete="name" required>
           </div>
           <div class="field">
-            <label for="cf-email">E-mail</label>
+            <label for="cf-email">E-mail <span class="required">(required)</span></label>
             <input id="cf-email" name="email" type="email" autocomplete="email" required>
           </div>
           <div class="field">
-            <label for="cf-message">Message</label>
+            <label for="cf-message">Message <span class="required">(required)</span></label>
             <textarea id="cf-message" name="message" rows="5" required></textarea>
           </div>
           <button class="btn btn-primary" type="submit">Send message</button>
