@@ -384,7 +384,10 @@ h3 { font-size: 1.15rem; }
   gap: 24px;
   margin-top: 32px;
 }
-.projects { grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
+.projects {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  align-items: stretch;
+}
 
 .card {
   display: flex;
@@ -396,10 +399,13 @@ h3 { font-size: 1.15rem; }
 }
 
 .card-img {
+  display: block;
+  flex-shrink: 0;
   width: 100%;
+  height: auto; /* override the HTML height attribute so aspect-ratio applies */
   aspect-ratio: 16 / 10;
   object-fit: cover;
-  object-position: top;
+  object-position: top center;
   background: var(--c-bg-alt);
 }
 
