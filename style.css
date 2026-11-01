@@ -354,7 +354,8 @@ h3 { font-size: 1.15rem; }
   background: var(--c-bg-alt);
   border: 4px solid var(--c-primary);
 }
-.timeline-item:first-child::before { background: var(--c-primary); }
+.timeline-item:first-child::before,
+.timeline-item.is-current::before { background: var(--c-primary); }
 
 .timeline-date {
   margin: 0 0 4px;
